@@ -3,5 +3,16 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     title: "imrok-3",
   },
-  plugins: ["gatsby-plugin-sass"],
+  plugins: [
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/_data/articles`,
+        name: "articles",
+      }
+    },
+    "gatsby-plugin-mdx-frontmatter",
+    "gatsby-plugin-mdx",
+    "gatsby-plugin-sass"
+  ],
 };
