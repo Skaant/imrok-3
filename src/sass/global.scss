@@ -4,10 +4,21 @@
 @import "../../node_modules/bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
+$primary: #a735ff;
+$secondary: #c579ff;
+$tertiary: #ffcd5c;
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
+
+// 2 bis.
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    "tertiary": $tertiary,
+  )
+);
 
 // 4. Include any optional Bootstrap components as you like
 @import "../../node_modules/bootstrap/scss/root";
@@ -15,6 +26,15 @@
 @import "../../node_modules/bootstrap/scss/type";
 @import "../../node_modules/bootstrap/scss/images";
 @import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/nav";
+@import "../../node_modules/bootstrap/scss/navbar";
+
+.navbar a {
+  color: $light;
+}
+
 @import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/utilities/api";
 
 // 5. Add additional custom code here
