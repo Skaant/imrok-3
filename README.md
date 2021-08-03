@@ -1,8 +1,8 @@
-# [imrok.fr](imrok.fr) v3.\*
+# [imrok.fr](https://imrok.fr) v3.\*
 
 `imrok-3` is both :
 
-- A **design rework** for my creative website [imrok.fr](imrok.fr),
+- A **design rework** for my creative website [imrok.fr](https://imrok.fr),
 - And a POC for an **automated static website generator** (exploitng [Gatsby framework](https://gatsbyjs.com/)) which could be **triggered by content managers from GitHub UI**.
 
 As so, **there is actually two _Quick start_ guides** : the [content manager one](#quick-start-content-manager) and the [developper one](#quick-start-developer).
@@ -13,6 +13,12 @@ As so, **there is actually two _Quick start_ guides** : the [content manager one
   - [Pages tree](#pages-tree)
   - [Data types](#data-types)
   - [Meta-data](#meta-data)
+  - [Pages details](#pages-details)
+    - [Page `index`](#page-index)
+      - [Components tree](#components-tree)
+    - [Page `idees`](#page-idees)
+    - [Page `idees/articles`](#page-ideesarticles)
+    - [Page `idees/articles/:article.slug`](#page-ideesarticlesarticleslug)
 
 ## Quick start (content manager)
 
