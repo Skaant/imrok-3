@@ -6,7 +6,7 @@ import "../sass/home.scss";
 
 function HomePage({ data }) {
   return (
-    <Layout>
+    <Layout pageId="home">
       <>
         <h1 className="text-center">IMROK</h1>
         <p className="col-12 text-center">L'imagination est la voie !</p>
@@ -16,7 +16,7 @@ function HomePage({ data }) {
           </div>
         </div>
         <div className="row justify-content-around">
-          <div className="col-12 col-md-10 col-xl-8">
+          <div className="col-12 col-md-10 col-xl-8 text-display">
             <h2>Mon hub créatif</h2>
             <p>Bonjour, je m'appelle Romaric Ruga.</p>
             <p>

@@ -4,11 +4,13 @@ import { Helmet } from "react-helmet";
 import Navbar from "./Navbar";
 
 function Layout({
+  pageId,
   title,
   description,
   tags,
   children,
 }: {
+  pageId?: string;
   title?: string;
   description?: string;
   tags?: string[];
@@ -32,10 +34,13 @@ function Layout({
           {data.site.siteMetadata.title}
         </title>
       </Helmet>
-      <div id="content" className="container-fluid bg-primary text-light">
+      <main
+        id={pageId ? `page-${pageId}` : "content"}
+        className="container-fluid bg-primary text-light"
+      >
         <Navbar />
         {children}
-      </div>
+      </main>
     </>
   );
 }

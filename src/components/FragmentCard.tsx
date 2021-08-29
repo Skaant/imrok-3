@@ -8,7 +8,12 @@ function FragmentCard({ frontmatter: { title, tags }, body }: FragmentM) {
       <div className="card-header">
         <div className="d-flex justify-content-end pt-2">
           {tags.map((tag) => (
-            <div className="badge bg-primary rounded-pill ms-2">{tag}</div>
+            <a
+              href={`/tags/${tag}`}
+              className="badge bg-primary rounded-pill ms-2"
+            >
+              {tag}
+            </a>
           ))}
         </div>
         <h3 className="marker mx-2 my-4">{title}</h3>
