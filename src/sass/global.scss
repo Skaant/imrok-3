@@ -36,5 +36,22 @@ $theme-colors: map-merge(
 @import "../../node_modules/bootstrap/scss/grid";
 @import "../../node_modules/bootstrap/scss/utilities";
 @import "../../node_modules/bootstrap/scss/utilities/api";
+@import "../../node_modules/bootstrap/scss/card";
+@import "../../node_modules/bootstrap/scss/badge";
 
 // 5. Add additional custom code here
+@font-face {
+  font-family: "Permanent Marker";
+  src: url("./PermanentMarker-Regular.ttf");
+}
+
+h1,
+h2,
+h3,
+.marker {
+  font-family: "Permanent Marker";
+}
+
+#content {
+  min-height: 100vh;
+}

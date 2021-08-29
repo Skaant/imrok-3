@@ -1,7 +1,48 @@
+import { graphql } from "gatsby";
 import Layout from "../templates/_layout/Layout";
+import FragmentCard from "../components/FragmentCard";
+import "../sass/home.scss";
 
 export default ({ children }) => <Layout>{children}</Layout>;
 
-# Hello !
+<h1 class="text-center">IMROK</h1>
+<p class="col-12 text-center">L'imagination est la voie !</p>
 
-<div>Salut !</div>
+<div class="col-12 d-flex justify-content-around">
+  <FragmentCard {...props.data.highlight1} />
+</div>
+
+## Mon _hub_ créatif
+
+Qu'est-ce qu'un hub ?
+
+C'est l'endroit où sont rassemblés du contenu et des liens.
+
+IMROK c'est le hub créatif de Romaric Ruga, moi; le lieu sur internet où je connecte et montre mes projets.
+
+<div class="col-12 d-flex justify-content-around">
+  <FragmentCard {...props.data.highlight2} />
+</div>
+
+export const pageQuery = graphql`
+  query {
+    highlight1: mdx(slug: { eq: "fragments/2" }) {
+      id
+      frontmatter {
+        slug
+        title
+        tags
+      }
+      body
+    }
+    highlight2: mdx(slug: { eq: "fragments/3" }) {
+      id
+      frontmatter {
+        slug
+        title
+        tags
+      }
+      body
+    }
+  }
+`;

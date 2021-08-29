@@ -7,12 +7,12 @@ function Layout({
   title,
   description,
   tags,
-  children
+  children,
 }: {
-  title?: string
-  description?: string
-  tags?: string[]
-  children: ReactElement
+  title?: string;
+  description?: string;
+  tags?: string[];
+  children: ReactElement;
 }) {
   const data = useStaticQuery(graphql`
     query LayoutQuery {
@@ -22,15 +22,18 @@ function Layout({
         }
       }
     }
-  `)
+  `);
   return (
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{ title ? title + ' - ' : '' }{ data.site.siteMetadata.title }</title>
+        <title>
+          {title ? title + " - " : ""}
+          {data.site.siteMetadata.title}
+        </title>
       </Helmet>
-      <Navbar />
-      <div id="content" className="container-fluid">
+      <div id="content" className="container-fluid bg-primary text-light">
+        <Navbar />
         {children}
       </div>
     </>
