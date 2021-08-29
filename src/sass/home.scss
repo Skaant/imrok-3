@@ -1,13 +1,12 @@
 @import "../components/FragmentCard.scss";
 
 #content {
-  padding-bottom: 16vh;
+  padding-bottom: 10vh;
   h1 {
     font-size: 24vw;
     margin-top: 20vh;
     & + p {
       font-size: 8vw;
-      margin-bottom: 16vh;
     }
   }
 }
