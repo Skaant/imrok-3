@@ -1,10 +1,10 @@
 import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../templates/_layout/Layout";
+import Layout from "./_layout/Layout";
 import FragmentCard from "../components/FragmentCard";
 import "../sass/home.scss";
 
-function HomePage({ data }) {
+function HomePage(props) {
+  const { tagsAndCount, highlights } = props.pageContext;
   return (
     <Layout pageId="home">
       <>
@@ -12,7 +12,7 @@ function HomePage({ data }) {
         <p className="col-12 text-center">L'imagination est la voie !</p>
         <div className="row justify-content-around">
           <div className="col-12 col-md-6 col-xl-4">
-            <FragmentCard {...data.highlight1} />
+            <FragmentCard {...highlights[0]} />
           </div>
         </div>
         <div className="row justify-content-around">
@@ -27,7 +27,7 @@ function HomePage({ data }) {
         </div>
         <div className="row justify-content-around">
           <div className="col-12 col-md-6 col-xl-4">
-            <FragmentCard {...data.highlight2} />
+            <FragmentCard {...highlights[1]} />
           </div>
         </div>
       </>
@@ -36,26 +36,3 @@ function HomePage({ data }) {
 }
 
 export default HomePage;
-
-export const query = graphql`
-  query {
-    highlight1: mdx(slug: { eq: "fragments/2" }) {
-      id
-      frontmatter {
-        slug
-        title
-        tags
-      }
-      body
-    }
-    highlight2: mdx(slug: { eq: "fragments/3" }) {
-      id
-      frontmatter {
-        slug
-        title
-        tags
-      }
-      body
-    }
-  }
-`;
