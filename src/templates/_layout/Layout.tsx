@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React, { ReactElement } from "react";
 import { Helmet } from "react-helmet";
+import TagsAndCount from "../_models/TagsAndCount.type";
 import Navbar from "./Navbar";
 
 function Layout({
@@ -8,15 +9,19 @@ function Layout({
   title,
   description,
   tags,
+  data,
   children,
 }: {
   pageId?: string;
   title?: string;
   description?: string;
   tags?: string[];
+  data?: {
+    tagsAndCount?: TagsAndCount;
+  };
   children: ReactElement;
 }) {
-  const data = useStaticQuery(graphql`
+  const titleQuery = useStaticQuery(graphql`
     query LayoutQuery {
       site {
         siteMetadata {
@@ -31,14 +36,14 @@ function Layout({
         <meta charSet="utf-8" />
         <title>
           {title ? title + " - " : ""}
-          {data.site.siteMetadata.title}
+          {titleQuery.site.siteMetadata.title}
         </title>
       </Helmet>
       <main
         id={pageId ? `page-${pageId}` : "content"}
         className="container-fluid bg-primary text-light"
       >
-        <Navbar />
+        <Navbar tagsAndCount={data.tagsAndCount} />
         {children}
       </main>
     </>

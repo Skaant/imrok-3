@@ -12,7 +12,7 @@ async function renderer({ graphql, createPage }) {
     await homeHighlightsQuery(graphql, ["fragments/2", "fragments/3"])
   ).data.allMdx;
   createPage({
-    path: "",
+    path: "/",
     component: require.resolve("../src/templates/home.tsx"),
     context: {
       tagsAndCount,
@@ -29,6 +29,7 @@ async function renderer({ graphql, createPage }) {
       component: require.resolve("../src/templates/tag.tsx"),
       context: {
         tag,
+        tagsAndCount,
         fragments: tagsFragments[index].data.allMdx.nodes,
       },
     })

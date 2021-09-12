@@ -6,7 +6,7 @@ import "../sass/home.scss";
 function HomePage(props) {
   const { tagsAndCount, highlights } = props.pageContext;
   return (
-    <Layout pageId="home">
+    <Layout pageId="home" data={{ tagsAndCount }}>
       <>
         <h1 className="text-center">IMROK</h1>
         <p className="col-12 text-center">L'imagination est la voie !</p>

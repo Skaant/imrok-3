@@ -6,9 +6,9 @@ import FragmentCard from "../components/FragmentCard";
 import "../sass/tag.scss";
 
 function TagTemplate(props) {
-  const { tag, fragments } = props.pageContext;
+  const { tag, fragments, tagsAndCount } = props.pageContext;
   return (
-    <Layout pageId="tag">
+    <Layout pageId={`tag-${tag}`} data={{ tagsAndCount }}>
       <>
         <div className="row justify-content-around">
           <div className="col-12 col-md-10 col-xl-8">

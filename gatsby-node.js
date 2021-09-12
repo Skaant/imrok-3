@@ -14,7 +14,7 @@ exports.onCreateNode = ({ node, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  renderer({
+  await renderer({
     graphql,
     createPage,
   });
