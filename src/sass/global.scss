@@ -13,11 +13,23 @@ $tertiary: #ffcd5c;
 @import "../../node_modules/bootstrap/scss/mixins";
 
 // 2 bis.
-$theme-colors: map-merge(
-  $theme-colors,
-  (
-    "tertiary": $tertiary,
-  )
+$theme-colors: (
+  white: $white,
+  light: $light,
+  dark: $dark,
+  black: $black,
+  primary: $primary,
+  secondary: $secondary,
+  tertiary: $tertiary,
+);
+$text-colors: (
+  white: $dark,
+  light: $dark,
+  dark: $light,
+  black: $light,
+  primary: $light,
+  secondary: $light,
+  tertiary: $dark,
 );
 
 // 4. Include any optional Bootstrap components as you like
@@ -26,24 +38,23 @@ $theme-colors: map-merge(
 @import "../../node_modules/bootstrap/scss/type";
 @import "../../node_modules/bootstrap/scss/images";
 @import "../../node_modules/bootstrap/scss/containers";
-@import "../../node_modules/bootstrap/scss/nav";
-@import "../../node_modules/bootstrap/scss/navbar";
-
-.navbar a {
-  color: $light;
-}
 
 @import "../../node_modules/bootstrap/scss/grid";
 @import "../../node_modules/bootstrap/scss/utilities";
 @import "../../node_modules/bootstrap/scss/utilities/api";
 @import "../../node_modules/bootstrap/scss/card";
-@import "../../node_modules/bootstrap/scss/badge";
+// @import "../../node_modules/bootstrap/scss/badge";
 
 // 5. Add additional custom code here
 @font-face {
   font-family: "Permanent Marker";
   src: url("./PermanentMarker-Regular.ttf");
 }
+
+@import "./main";
+@import "./badge";
+@import "./navbar";
+@import "./_components/FragmentCard.scss";
 
 h1,
 h2,

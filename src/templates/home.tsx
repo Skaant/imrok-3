@@ -9,7 +9,7 @@ function HomePage(props) {
     <Layout pageId="home" data={{ tagsAndCount }}>
       <>
         <h1 className="text-center">IMROK</h1>
-        <p className="col-12 text-center">L'imagination est la voie !</p>
+        <p className="col-12 text-center mb-5">L'imagination est la voie !</p>
         <div className="row justify-content-around">
           <div className="col-12 col-md-6 col-xl-4">
             <FragmentCard {...highlights[0]} />

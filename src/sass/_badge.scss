@@ -1,0 +1,14 @@
+.badge-md {
+  padding: 6px 12px 4px;
+  font-size: 0.8rem;
+}
+a.badge-md {
+  text-decoration: none;
+}
+
+@each $color, $value in $theme-colors {
+  .badge-#{$color} {
+    background: $value;
+    color: map-get($text-colors, $color);
+  }
+}

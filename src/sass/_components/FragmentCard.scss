@@ -1,14 +1,10 @@
 .fragment-card {
   width: 100%;
   max-width: 800px;
-  margin: 4rem auto 3rem;
+  color: $dark;
   .card-header {
     background: none;
     border-bottom: none;
-    .badge {
-      padding: 0.2rem 1rem 0.5rem;
-      font-size: 1rem;
-    }
   }
   .card-body {
     img {
