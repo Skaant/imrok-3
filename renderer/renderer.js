@@ -1,6 +1,7 @@
 const dataQuery = require("./queries/data.query");
 const homeHighlightsQuery = require("./queries/homeHighlights.query");
-const tagFragmentQuery = require("./queries/tagFragments.query");
+const tagFragmentsQuery = require("./queries/tagFragments.query");
+const tagsDetailsQuery = require("./queries/tagsDetails.query");
 const getTagsAndCount = require("./_helpers/getTagsAndCount");
 
 async function renderer({ graphql, createPage }) {
@@ -19,21 +20,26 @@ async function renderer({ graphql, createPage }) {
       highlights,
     },
   });
-  /** TAGS PAGE */
-  const tagsFragments = await Promise.all(
-    tags.map((tag) => tagFragmentQuery(graphql, tag))
+  /** TAGS LIST PAGES */
+  const tagsDetails = await Promise.all(
+    tags.map((tag) => tagsDetailsQuery(graphql, tag))
   );
-  tags.forEach((tag, index) =>
-    createPage({
+  const tagsFragments = await Promise.all(
+    tags.map((tag) => tagFragmentsQuery(graphql, tag))
+  );
+  tags.forEach((tag, index) => {
+    console.log(tagsDetails[index], tag);
+    return createPage({
       path: `tags/${tag}`,
       component: require.resolve("../src/templates/tag.tsx"),
       context: {
         tag,
+        details: tagsDetails[index].data.mdx,
         tagsAndCount,
         fragments: tagsFragments[index].data.allMdx.nodes,
       },
-    })
-  );
+    });
+  });
 }
 
 module.exports = renderer;
